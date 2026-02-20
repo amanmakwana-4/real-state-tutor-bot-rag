@@ -1,0 +1,28 @@
+# Real Estate Tutor Bot - Backend Dependencies
+# Python 3.9+ required
+
+# Web Framework
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Vector Stores
+faiss-cpu>=1.9.0
+pinecone-client
+
+# LLM Providers
+openai
+google-generativeai
+
+# Data Processing
+pandas
+numpy
+python-dotenv
+
+# Utilities
+aiohttp
+httpx
+
+# Development
+python-multipart

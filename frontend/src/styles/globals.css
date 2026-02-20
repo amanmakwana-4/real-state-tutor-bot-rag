@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased text-gray-900 bg-gray-50;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+}
+
+/* Custom Component Styles */
+@layer components {
+  /* Message Bubbles */
+  .message-bubble {
+    @apply p-4 rounded-2xl max-w-[85%] animate-slide-up;
+  }
+  
+  .message-user {
+    @apply bg-primary-600 text-white ml-auto rounded-br-md;
+  }
+  
+  .message-bot {
+    @apply bg-white text-gray-900 mr-auto rounded-bl-md shadow-sm border border-gray-100;
+  }
+  
+  /* Score Badge */
+  .score-badge {
+    @apply inline-flex items-center justify-center px-3 py-1 rounded-full text-sm font-semibold;
+  }
+  
+  .score-high {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .score-medium {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .score-low {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  /* Quick Action Button */
+  .quick-action-btn {
+    @apply px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium
+           text-gray-700 hover:bg-gray-50 hover:border-primary-300 hover:text-primary-600
+           transition-all duration-200 whitespace-nowrap shadow-sm;
+  }
+  
+  /* Input */
+  .chat-input {
+    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-full
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           placeholder:text-gray-400 text-gray-900;
+  }
+  
+  /* Toggle Switch */
+  .toggle-switch {
+    @apply relative inline-flex h-6 w-11 items-center rounded-full
+           transition-colors duration-200 ease-in-out focus:outline-none
+           focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .toggle-switch-enabled {
+    @apply bg-primary-600;
+  }
+  
+  .toggle-switch-disabled {
+    @apply bg-gray-200;
+  }
+  
+  /* Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
+  }
+  
+  /* Loader */
+  .loader-dot {
+    @apply w-2 h-2 bg-primary-500 rounded-full animate-bounce;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+  
+  /* Safe area padding for mobile */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Markdown Content Styling */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  @apply font-semibold mt-4 mb-2;
+}
+
+.markdown-content h1 {
+  @apply text-xl;
+}
+
+.markdown-content h2 {
+  @apply text-lg;
+}
+
+.markdown-content h3 {
+  @apply text-base;
+}
+
+.markdown-content p {
+  @apply mb-2;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply ml-4 mb-2;
+}
+
+.markdown-content li {
+  @apply mb-1;
+}
+
+.markdown-content strong {
+  @apply font-semibold;
+}
+
+.markdown-content code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+}
+
+/* Animation for typing indicator */
+@keyframes typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+.typing-dot:nth-child(1) {
+  animation: typing-bounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation: typing-bounce 1.4s ease-in-out 0.2s infinite;
+}
+
+.typing-dot:nth-child(3) {
+  animation: typing-bounce 1.4s ease-in-out 0.4s infinite;
+}
